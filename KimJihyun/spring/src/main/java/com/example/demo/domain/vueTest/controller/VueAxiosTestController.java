@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequestMapping("/vue/first")
-@CrossOrigin(origins = "http://localhost:8081", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:8082", allowedHeaders = "*")
 public class VueAxiosTestController {
 //import는 Alt + Shift + Enter
     @PostMapping("/receive-test")

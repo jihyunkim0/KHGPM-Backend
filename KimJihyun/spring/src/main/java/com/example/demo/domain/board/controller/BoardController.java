@@ -10,7 +10,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/board")
-@CrossOrigin(origins = "http://localhost:8081", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:8082", allowedHeaders = "*")
 public class BoardController {
 
     final private BoardService boardService;
@@ -39,5 +39,12 @@ public class BoardController {
         log.info("boardRead()");
 
         return boardService.read(boardId);
+    }
+
+    @DeleteMapping("/{boardId}")
+    public void boardRemove(@PathVariable("boardId") Long boardId) {
+        log.info("boardRemove()");
+
+        boardService.remove(boardId);
     }
 }

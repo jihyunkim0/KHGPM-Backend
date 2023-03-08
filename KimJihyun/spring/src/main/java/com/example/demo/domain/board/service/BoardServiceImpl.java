@@ -29,11 +29,11 @@ public class BoardServiceImpl implements BoardService {
 
         boardRepository.save(board);
     }
+
     @Override
     public List<Board> list() {
         return boardRepository.findAll(Sort.by(Sort.Direction.DESC, "boardId"));
     }
-
 
     @Override
     public Board read(Long boardId) {
@@ -46,5 +46,10 @@ public class BoardServiceImpl implements BoardService {
         }
 
         return maybeBoard.get();
+    }
+
+    @Override
+    public void remove(Long boardId) {
+        boardRepository.deleteById(boardId);
     }
 }
