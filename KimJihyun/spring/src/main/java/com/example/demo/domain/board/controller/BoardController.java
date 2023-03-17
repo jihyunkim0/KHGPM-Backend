@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/board")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:8085", allowedHeaders = "*")
 public class BoardController {
 
     final private BoardService boardService;
