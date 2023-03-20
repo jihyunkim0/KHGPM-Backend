@@ -12,4 +12,6 @@ public interface ProductService {
 
     Product read(Long productId);
 
+    void remove(Long productId);
+
 }
