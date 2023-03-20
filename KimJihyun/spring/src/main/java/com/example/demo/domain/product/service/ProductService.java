@@ -9,4 +9,7 @@ public interface ProductService {
     void register(ProductRequest productRequest);
 
     List<Product> list();
+
+    Product read(Long productId);
+
 }

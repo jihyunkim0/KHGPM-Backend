@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -30,5 +31,17 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> list() {
         return productRepository.findAll();
+    }
+
+    @Override
+    public Product read(Long productId) {
+        Optional<Product> maybeProduct = productRepository.findById(productId);
+
+        if (maybeProduct.isEmpty()) {
+            log.info("읽을 수가 없드아!");
+            return null;
+        }
+
+        return maybeProduct.get();
     }
 }
