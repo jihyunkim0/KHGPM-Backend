@@ -1,10 +1,13 @@
 package com.example.demo.domain.product.controller;
 
 import com.example.demo.domain.product.controller.request.ProductRequest;
+import com.example.demo.domain.product.entiity.Product;
 import com.example.demo.domain.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -21,4 +24,12 @@ public class ProductController {
 
         productService.register(productRequest);
     }
+
+    @GetMapping("/list")
+    public List<Product> productList () {
+        log.info("boardList()");
+
+        return productService.list();
+    }
+
 }
